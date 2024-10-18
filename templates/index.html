@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine with Tree Structure</h1>
+
+        <div class="section">
+            <h2>Create Rule</h2>
+            <form id="createRuleForm">
+                <input type="text" id="ruleName" placeholder="Rule Name" required>
+                <textarea id="ruleString" placeholder="Enter rule string" required></textarea>
+                <button type="submit">Create Rule</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Combine Rules</h2>
+            <form id="combineRulesForm">
+                <input type="text" id="rules" placeholder="Rule names (comma-separated)" required>
+                <select id="op" required>
+                    <option value="AND">AND</option>
+                    <option value="OR">OR</option>
+                </select>
+                <button type="submit">Combine Rules</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Evaluate Rule</h2>
+            <form id="evaluateRuleForm">
+                <input type="text" id="ast" placeholder="Rule name" required>
+                <textarea id="data" placeholder="Enter JSON data" required></textarea>
+                <button type="submit">Evaluate Rule</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Result</h2>
+            <div id="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>Rule Tree</h2>
+            <div id="tree-container"></div>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
