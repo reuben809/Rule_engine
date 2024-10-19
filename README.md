@@ -4,12 +4,10 @@
 1. [Overview](#overview)
 2. [Project Structure](#project-structure)
 3. [Installation](#installation)
-4. [Components](#components)
-5. [API Documentation](#api-documentation)
-6. [Rule Structure](#rule-structure)
-7. [Test Cases](#test-cases)
-8. [Error Handling](#error-handling)
-9. [Troubleshooting](#troubleshooting)
+4. [API Documentation](#api-documentation)
+5. [Test Cases](#test-cases)
+6. [Error Handling](#error-handling)
+7. [Troubleshooting](#troubleshooting)
 
 ## Overview
 This project implements a 3-tier rule engine application using Abstract Syntax Trees (AST) to evaluate rules based on various user-defined attributes such as age, department, income, and more. The rule engine allows users to create, combine, and evaluate complex rules via a RESTful API, which can be integrated into various systems.
@@ -59,27 +57,6 @@ python main.py
 
 The application will start on `http://127.0.0.1:3000` (or the specified port) and can be accessed via the browser or API clients.
 
-## Components
-
-### 1. **AST Node Structure**
-The core structure of the rule engine is based on an Abstract Syntax Tree (AST). Here's a simplified node structure:
-```python
-class Node:
-    def __init__(self, type, value=None, left=None, right=None):
-        self.type = type        # 'operator' or 'condition'
-        self.value = value      # Operator (AND/OR) or condition string
-        self.left = left        # Left child node
-        self.right = right      # Right child node
-```
-
-### 2. **Database Schema**
-The rules are stored in an SQLite database with the following schema:
-```python
-class Rule(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    rule_name = db.Column(db.String(100), unique=True, nullable=False)
-    rule_ast = db.Column(db.PickleType, nullable=False)
-```
 
 ## API Documentation
 
@@ -161,25 +138,6 @@ class Rule(db.Model):
   }
   ```
 
-## Rule Structure
-
-### Supported Conditions
-- `age > 30`
-- `department = 'Sales'`
-- `salary >= 50000`
-
-### Supported Logical Operators
-- `AND`, `OR`
-
-### Example Rules
-1. Simple:
-   ```bash
-   age > 30
-   ```
-2. Compound:
-   ```bash
-   (age > 30 AND department = 'Sales')
-   ```
 
 ## Test Cases
 
