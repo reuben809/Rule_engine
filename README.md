@@ -164,5 +164,11 @@ The application handles:
 - **Evaluation issues:** Ensure that the data being passed matches the rule format.
 - **Server errors:** Verify that the `.env` file is correctly set up.
 
-For further assistance, please refer to the documentation or create an issue in the repository.
 
+## Contact
+
+For any inquiries, please contact:
+
+- **Name**: Reuben Sebastian Joseph  
+- **Email**: reuben.joseph010@icloud.com  
+- **GitHub**: [reuben809](https://github.com/reuben809)
